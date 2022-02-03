@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:ROIMobileApp.Views" 
+             xmlns:model="clr-namespace:ROIMobileApp.Classes" 
+             x:Class="ROIMobileApp.Views.AllRecordsPage"
+             Title="Records"
+             x:Name="RecordsView"
+             Appearing="RecordsView_Appearing"
+             BackgroundColor="{DynamicResource SelectedBackgroundColour}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icons_help.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <RefreshView x:Name="rfRecords" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="cvRecords"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="20,15,10,10" HeightRequest="65">
+                        <Label Style="{DynamicResource SelectedFontSize}" Margin="0,0,0,5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Name}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Opacity="0.7" Grid.Column="1" VerticalOptions="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Record "/>
+                                    <Span Text="{Binding Id}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:AllRecordsPage}}, Path=RecordTapped}"		
+                                    CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

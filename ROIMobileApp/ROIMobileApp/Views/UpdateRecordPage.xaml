@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ROIMobileApp.Views.UpdateRecordPage"
+             Title="Update Record"
+             BackgroundColor="{DynamicResource SelectedBackgroundColour}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icons_help.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="UpdateRecordForm">
+                <StackLayout Margin="15,15,15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="Name:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eName" WidthRequest="200" Text="{Binding RecordObj.Name}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="Phone:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="ePhone" WidthRequest="200" Text="{Binding RecordObj.Phone}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" Keyboard="Numeric"/>
+                </StackLayout>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="Department ID:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eDepId" WidthRequest="50" Text="{Binding RecordObj.Department.Id}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" Keyboard="Numeric"/>
+                </StackLayout>
+                <Label Text="Address" FontSize="Large" Margin="0,10" Padding="15,20" Background="LightGray"/>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="Street:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eStreet" WidthRequest="200" Text="{Binding RecordObj.Address.Street}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="City:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eCity" WidthRequest="200" Text="{Binding RecordObj.Address.City}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" />
+                </StackLayout>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="State:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eState" WidthRequest="75" Text="{Binding RecordObj.Address.State}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="ZIP:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eZip" WidthRequest="60" Text="{Binding RecordObj.Address.ZIP}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" Keyboard="Numeric"/>
+                </StackLayout>
+                <StackLayout Margin="15,0" Spacing="20" Orientation="Horizontal">
+                    <Label Text="Country:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" Margin="0,0,0,10"/>
+                    <Entry x:Name="eCountry" WidthRequest="200" Text="{Binding RecordObj.Address.Country}" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" />
+                </StackLayout>
+                <Button Text="Confirm" Margin="30,10,30,30" Clicked="Button_Clicked" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

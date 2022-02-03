@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ROIMobileApp.Views.DeleteRecordPage"
+             Title="Delete Record"
+             BackgroundColor="{DynamicResource SelectedBackgroundColour}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icons_help.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Margin="80, 55">
+                <Label Text="Record ID:" Style="{DynamicResource SelectedFontSize}" FontAttributes="Bold" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,0,10"/>
+                <Entry x:Name="RecordId" WidthRequest="100" Style="{DynamicResource SelectedFontSize}" VerticalOptions="Center" HorizontalOptions="Center" Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout Margin="30, 15">
+                <Label Text="Are you sure you want to delete this record?" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Large" Margin="0,0,0,20"/>
+                <Button Text="Confirm Deletion" Clicked="Button_Clicked"/>
+            </StackLayout>
+            <Button Text="Cancel" Background="Transparent" TextColor="#941a1d" BorderColor="#941a1d" BorderWidth="2" Margin="30,100,30,0" Clicked="Button_Clicked_1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ROIMobileApp.Views.AccessibilityPage"
+             Title="Accessibility Settings"
+             BackgroundColor="{DynamicResource SelectedBackgroundColour}">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20,30" HorizontalOptions="Center" Spacing="20">
+                <Image Source="ROI_Logo.jpg" HeightRequest="50"/>
+                <Label Text="Accessibility" FontSize="Large" VerticalOptions="Center" TextColor="Black"/>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Label FontSize="Large" VerticalTextAlignment="Center" Padding="20,0" BackgroundColor="LightGray" HeightRequest="50">Background Colour</Label>
+                    <StackLayout Orientation="Horizontal" Padding="20" Spacing="20">
+                        <Label VerticalOptions="Center" Style="{DynamicResource SelectedFontSize}" TextColor="Black">Background Colour</Label>
+                        <Picker x:Name="ColourPicker" Title="Select a Colour" WidthRequest="200" Unfocused="ColourPicker_Unfocused"/>
+                    </StackLayout>
+                    <Label FontSize="Large" VerticalTextAlignment="Center" Padding="20,0" BackgroundColor="LightGray" HeightRequest="50">Text Size</Label>
+                    <StackLayout Orientation="Horizontal" Padding="20" Spacing="20">
+                        <Label VerticalOptions="Center" Style="{DynamicResource SelectedFontSize}" TextColor="Black">Text Size</Label>
+                        <Entry x:Name="TextSizeEntry" Placeholder="Text Size" WidthRequest="100" Keyboard="Numeric" Unfocused="TextSizeEntry_Unfocused"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
